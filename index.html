@@ -9,6 +9,39 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
   </head>
 
+  <style>
+    .tab-container {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+    }
+    .tab {
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      border: none;
+      background: none;
+      outline: none;
+      font-weight: bold;
+      color: #1a0dab;
+    }
+    .tab:hover {
+      text-decoration: underline;
+    }
+    .tab.active {
+      border-bottom: 3px solid #1a0dab;
+      color: black;
+    }
+    .content-section {
+      display: none;
+      padding: 10px;
+    }
+    .content-section.active {
+      display: block;
+    }
+    </style>
+  </head>
+
   <body>
     <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
       <tbody>
@@ -19,7 +52,7 @@
                 <tr style="padding:0px">
                   <td style="padding:2.5%;width:63%;vertical-align:middle">
                     <p class="name" style="text-align: center;">
-                      María Gragera Garcés
+                      <h1>María Gragera Garcés</h1>
                     </p>
                     <p>
                       I'm a PhD student at 
@@ -43,10 +76,10 @@
                       <a href="mailto:m.gragera.garces@gmail.com">Email</a> &nbsp;/&nbsp;
                       <a href="files/Maria_Gragera_Garces_CV.pdf">CV</a> &nbsp;/&nbsp;
                       <a href="https://www.linkedin.com/in/maria-gragera-garces/">LinkedIn</a> &nbsp;/&nbsp;
+                      <a href="https://bsky.app/profile/jonbarron.bsky.social">Bluesky</a> &nbsp;/&nbsp;
+                      <a href="https://github.com/grageragarces">GitHub</a>
                       <a href="https://scholar.google.com/citations?user=QydE450AAAAJ&hl">Scholar</a> &nbsp;/&nbsp;
                       <a href="https://www.research.ed.ac.uk/en/persons/maría-gragera-garcés">Pure</a> &nbsp;/&nbsp;
-                      <a href="https://bsky.app/profile/jonbarron.bsky.social">Bluesky</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/grageragarces">Github</a>
                     </p>
                   </td>
                   <td style="padding:2.5%;width:37%;max-width:37%">
@@ -60,22 +93,482 @@
                 </tr>
               </tbody>
             </table>
+
+            <style>
+              .tab-container {
+                display: flex;
+                border-bottom: 2px solid #ddd;
+                margin-bottom: 20px;
+              }
+              .tab {
+                padding: 10px 15px;
+                cursor: pointer;
+                font-size: 16px;
+                border: none;
+                background: none;
+                outline: none;
+                font-weight: bold;
+                color: #1a0dab;
+              }
+              .tab:hover {
+                text-decoration: underline;
+              }
+              .tab.active {
+                border-bottom: 3px solid #1a0dab;
+                color: black;
+              }
+              .content-section {
+                display: none;
+                padding: 10px;
+              }
+              .content-section.active {
+                display: block;
+              }
+              .blogs-container, .research-container {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                padding: 10px;
+                background-color: #ffffff;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+              }
+              .blogs-image, .research-image {
+                width: 150px;
+                height: auto;
+                margin-right: 20px;
+                border-radius: 5px;
+              }
+              .blogs-text, .research-text {
+                flex: 1;
+              }
+              .papertitle {
+                font-weight: bold;
+                font-size: 16px;
+                color: #1a0dab;
+              }
+              a {
+                text-decoration: none;
+                color: #1a0dab;
+              }
+              a:hover {
+                text-decoration: underline;
+              }
+            </style>
+
+            <div class="tab-container">
+              <button class="tab active" onclick="showSection('research')">Research</button>
+              <button class="tab" onclick="showSection('blogs')">Blogs</button>
+              <button class="tab" onclick="showSection('podcasts')">Podcasts & Talks</button>
+              <button class="tab" onclick="showSection('open-source')">Repos</button>
+              <button class="tab" onclick="showSection('news')">News</button>
+              <button class="tab" onclick="showSection('experience')">Experience</button>
+            </div>
             
-            <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-              <tbody>
-                <tr>
-                  <td style="padding:16px;width:100%;vertical-align:middle">
-                    <h2>Research</h2>
-                    <p>
-                      I'm interested in distributed quantum computing, quantum networks, quantum complexity theory, and quantum computing models.
-                    </p>
+            <div id="research" class="content-section active">
+              <p>I'm interested in distributed quantum computing, quantum networks, complexity theory, and quantum computing models.</p>
+              <p>Here are some of the papers I've published:</p>
+              
+              <div class="research-container">
+                <img src="images/qmm.png" class="research-image" alt="Quantum Memory Manager">
+                <div class="research-text">
+                  <a href="https://patents.google.com/patent/US20240070514A1/en">
+                    <span class="papertitle">Controlling Quantum Communication via Quantum Memory Management</span>
+                  </a>
+                  <br>
+                  Louis Gwyn Samuel, Santanu Ganguly, <strong>Maria Gragera Garces</strong>, Luca Della Chiesa
+                  <br>
+                  <em>US Patent App.</em>, 2024
+                  <p>Quantum memory manager patent in a distributed quantum system, specifically handling qubit storage and entanglement between different endpoints.</p>
+                </div>
+              </div>
+
+              <div class="research-container">
+                <img src="images/qfk.png" class="research-image" alt="Quantum Memory Manager">
+                <div class="research-text">
+                  <a href="files/Qubits_for_the_Kids.pdf" download>
+                    <span class="papertitle">Realizing a sustainable quantum internet for the smallest/future researchers</span>
+                  </a>
+                  <br>
+                  Ed Kuijpers, Swantje Kastrup, Jasper van de Kraats, Robert de Keijzer, Zhichao Guo, <strong>Maria Gragera Garces</strong>, and VesnaManojlovic
+                  <br>
+                  <em>Results of the Quantum Internet Hackathon</em>, 2022
+                  <p>Study on the social and ecological sustainability of quantum computing.</p>
+                </div>
+              </div>
+
+            </div>        
+
+            <div id="blogs" class="content-section">
+              <p>Here are some of the blog posts I've written over the years on various topics:</p>
+
+              <div class="blogs-container">
+                <img src="images/quail.webp" class="blogs-image" alt="Blog Image">
+                <div class="blogs-text">
+                  <a href="https://medium.com/quail-technologies/navigating-the-quantum-risk-landscape-71a313f80075">
+                    <span class="papertitle">Navigating the Quantum Risk Landscape</span>
+                  </a>
+                  <br>
+                  <em>QuAIL Technologies</em>, 2024
+                  <p>Reflections on how Post-Quantum Cryptography is Shaping the Future of Financial Security.</p>
+                </div>
+            </div>
+
+              <div class="blogs-container">
+                <img src="images/storytelling.jpg" class="blogs-image" alt="Blog Image">
+                <div class="blogs-text">
+                  <a href="https://www.linkedin.com/pulse/study-effects-storytelling-science-education-mar%25C3%25ADa-gragera-garc%25C3%25A9s-pbjgc/?trackingId=ieQ02CAiQJOzGNaFx51RCw%3D%3D">
+                    <span class="papertitle">A Study on the Effects of Storytelling in Science Education</span>
+                  </a>
+                  <br>
+                  <em>LinkedIn article</em>, 2024
+                  <p>Storytelling, as one of the oldest teaching methods, has historically served as a means of building connections within communities globally. This article investigates the influence of storytelling in modern science education, specifically its role in science classrooms and its observed decline in current scientific learning environments.</p>
+                </div>
+              </div>
+
+                <div class="blogs-container">
+                  <img src="images/bizantinebetrayals.jpg" class="blogs-image" alt="Blog Image">
+                  <div class="blogs-text">
+                    <a href="https://www.linkedin.com/pulse/byzantine-betrayals-quantum-generals-mar%25C3%25ADa-gragera-garc%25C3%25A9s-62oje/?trackingId=ieQ02CAiQJOzGNaFx51RCw%3D%3D">
+                      <span class="papertitle">Byzantine betrayals and quantum generals</span>
+                    </a>
+                    <br>
+                    <em>LinkedIn article</em>, 2024
+                    <p>Once upon a time, byzantine armies surrounded a grand city, ready to conquer it. Each battalion, led by a powerful byzantine general was charged of maintaining siege and attacking the city from a different strategical position.</p>
+                  </div>
+              </div>
+
+              <div class="blogs-container">
+                <img src="images/sp.jpg" class="blogs-image" alt="Blog Image">
+                <div class="blogs-text">
+                  <a href="https://www.thequantumfoundry.com/p/a-blueprint-for-a-scalable-photonic?utm_source=substack&utm_medium=email">
+                    <span class="papertitle">A Blueprint for a Scalable Photonic Fault-Tolerant Quantum Computer</span>
+                  </a>
+                  <br>
+                  <em>Schrödinger's Papers</em>, The Quantum Foundry, 2022
+                  <p>
+                    Overview academic paper "A Blueprint for a Scalable Photonic Fault-Tolerant Quantum Computer".</p>
+                </div>
+              </div>
+
+            <div class="blogs-container">
+              <img src="images/bloch.png" class="blogs-image" alt="Blog Image">
+              <div class="blogs-text">
+                <a href="https://fullstackquantumcomputation.tech/blog/qubits-vs-bits/">
+                  <span class="papertitle">Qubits vs Bits</span>
+                </a>
+                <br>
+                <em>Full-Stack Quantum Computation</em>, 2022
+                <p>
+                  Basic tutorial explaining the fundamental differences between quantum and classical data storage units, and how they affect computer performance. This notebook has been designed for non-technical readers, who want to understand how qubits differ from bits and how do these differences make quantum computers different from classical computers.</p>
+              </div>
+          </div>
+        </div>
+
+          <div id="podcasts" class="content-section">
+            <p>I sometimes get invited to talk about my research and experience in the quantum field.</p>
+            <p>Check out some of my monologues:</p>
+            
+            <div class="blogs-container">
+              <img src="images/got.png" class="blogs-image" alt="Blog Image">
+              <div class="blogs-text">
+                <a href="https://www.youtube.com/watch?v=5Ale3keo0I4">
+                  <span class="papertitle">Quantum Internet, Informatics, Quantum Software, Distributed Computing</span>
+                </a>
+                <br>
+                <em>Genesis of Tomorrow</em>, 2024
+                <p> I was an invited speaker on Episode 23 of Genesis of Tomorrow, where I discussed Distributed Quantum Computing, its underlying models, and emerging frameworks.</p>
+              </div>
+          </div>
+            
+            <div class="blogs-container">
+              <img src="images/tqd.webp" class="blogs-image" alt="Blog Image">
+              <div class="blogs-text">
+                <a href="https://podcasts.apple.com/us/podcast/the-quantum-divide/id1690994795">
+                  <span class="papertitle">Quantum Undergrad</span>
+                </a>
+                <br>
+                <em>The Quantum Divide</em>, 2024
+                <p>I was an invited speaker on Episode 6 of The Quantum Divide, where I discussed quantum open source, what it's like being on the trajectory towards a possible career in quantum, simulation, and networking.</p>
+              </div>
+          </div>
+
+          <div class="blogs-container">
+            <img src="images/ieee.png" class="blogs-image" alt="Blog Image">
+            <div class="blogs-text">
+              <a href="https://www.youtube.com/watch?v=B0ozLXmH_Vc">
+                <span class="papertitle">Career Opportunities for Students in Quantum Communication and Quantum Information</span>
+              </a>
+              <br>
+              <em>IEEE-Eta Kappa Nu</em>, 2024
+              <p>HKN TechX 2024 Panel discussion on pathways to careers in quantum science and technology for students.</p>
+            </div>
+        </div>
+
+        <div class="blogs-container">
+          <img src="images/ginq.png" class="blogs-image" alt="Blog Image">
+          <div class="blogs-text">
+            <a href="https://www.youtube.com/watch?v=MYh4bbibg1c">
+              <span class="papertitle">Redes cuánticas e internet cuántico</span>
+            </a>
+            <br>
+            <em>Girls in Quantum</em>, 2022
+            <p>Talk on quantum networks and the quantum internet during Girls in Quantum 2022 conference (spanish).</p>
+          </div>
+      </div>
+
+      <div class="blogs-container">
+        <img src="images/beitlab.png" class="blogs-image" alt="Blog Image">
+        <div class="blogs-text">
+          <a href="https://www.youtube.com/watch?v=B0ozLXmH_Vc">
+            <span class="papertitle">Computación cuántica para dummies!</span>
+          </a>
+          <br>
+          <em>Beitlab</em>, 2022
+          <p>I was an invited speaker on Episode 2 of Beitlab, where I discussed quantum computing and the quantum industry (spanish).</p>
+        </div>
+    </div>
+    </div>
+
+    <div id="open-source" class="content-section">
+      <p>A collection of projects and repositories I have built over the years:</p>
+      
+      <div class="blogs-container">
+        <img src="images/qtp.png" class="blogs-image" alt="Blog Image">
+        <div class="blogs-text">
+          <a href="https://quantum-tech-papers.streamlit.app/">
+            <span class="papertitle">Quantum tech papers</span>
+          </a>
+          <br>
+          2022-2025
+          <p> This project contains a list of the papers and publications I read throughout my first years in my journey through quantum technologies. The objective is not to curate a list of the most recommended publications for beginners, but rather to build a journal-like record depicting my personal journey through quantum research papers.</p>
+        </div>
+    </div>
+
+    <div class="blogs-container">
+      <img src="images/diss.png" class="blogs-image" alt="Blog Image">
+      <div class="blogs-text">
+        <a href="https://github.com/grageragarces/Modelling-of-photon-pair-generation">
+          <span class="papertitle">
+            Modelling of photon pair generation in dual-rail lithium niobate photonic nano-wire setup</span>
+        </a>
+        <br>
+        <em>Uni. of Bath</em>, 2024
+        <p> This study addresses a crucial challenge in photonics quantum technologies by engineering novel setups to generate single photon sources with specific and easily implementable wavelengths. This code is part of my undegraduate dissertation conducted at the University of Bath under the supervision of Dr. Peter Mosley and Dr. Andrey Gorbach.</p>
+      </div>
+  </div>
+    
+      <div class="blogs-container">
+        <img src="images/qs.png" class="blogs-image" alt="Blog Image">
+        <div class="blogs-text">
+          <a href="https://github.com/grageragarces/Experimental-setup-for-Bell-state-analysis-showing-confirmation-of-a-state">
+            <span class="papertitle">Implementation of a quantum error correction code library for Julia’s Clifford gate simulator</span>
+          </a>
+          <br>
+          <em>Google Summer of Code</em>, 2022
+          <p> Comprehensive library of frequently used quantum error correcting codes for Julia’s simulator of Quantum Clifford Circuits completed during the Summer of Code 2022 Fellowship.</p>
+        </div>
+    </div>
+
+    <div class="blogs-container">
+      <img src="images/ntt.jpg" class="blogs-image" alt="Blog Image">
+      <div class="blogs-text">
+        <a href="https://github.com/grageragarces/Network-model-comparison">
+          <span class="papertitle">Comparing Multiple Networks: A Statistical Viewpoint</span>
+        </a>
+        <br>
+        <em>University of Bath's Mathematics Dep</em>, 2022
+        <p> Research project led by Dr. Sandipan Roy, focused on an analysis of quantum networks against classical networks in different mathematical graph settings from a statistical point of view. </p>
+      </div>
+  </div>
+
+      <div class="blogs-container">
+        <img src="images/bsm.png" class="blogs-image" alt="Blog Image">
+        <div class="blogs-text">
+          <a href="https://github.com/grageragarces/QuantumClifford.jl">
+            <span class="papertitle">Experimental setup for Bell state analysis showing confirmation of a |Ψ−> state simulation</span>
+          </a>
+          <br>
+          <em>Google Summer of Code</em>, 2022
+          <p>Simulation designed in SeQUeNCe (Simulator of QUantum Network Communication) of an experimental set up based on <a href="https://par.nsf.gov/servlets/purl/10381130">The Virtual Quantum Optics Laboratory</a> Figure 30. This setup is based on the effects of the Hong Ou Mandel Effect. I took on this project as means to become more familiar SeQUenCe as a tool, through collaboration with the NAU (Norther Arizona University) CQN (Center of Quantum Networks) team.</p>
+        </div>
+    </div>
+  </div>        
+
+  <div id="news" class="content-section">
+
+    <div class="blogs-container">
+      <img src="images/bqb.png" class="blogs-image" alt="Blog Image">
+      <div class="blogs-text">
+        <a href="https://www.barcelonaqbit.org/bqbquantumyouth/">
+          <span class="papertitle">bqb Quantum Youth: Quantum by and for students</span>
+        </a>
+        <br>
+        <em>bqb Quantum Youth</em>, 2022-Present
+        <p> As the Director of bqb Quantum Youth, I co-founded and built an international team of students from diverse academic backgrounds to create and deliver educational content for high school students. Our mission is to inspire and inform young learners about the exciting career opportunities in quantum technologies, serving as a gateway for their entry into this emerging field. In addition to overseeing all managerial aspects of the initiative, I led a foundational series on key concepts driving the current quantum industry, positioning students to better understand the technological advancements shaping the future.
+        </p>
+      </div>
+  </div>
+
+  <div class="blogs-container">
+    <img src="images/qsl.avif" class="blogs-image" alt="Blog Image">
+    <div class="blogs-text">
+      <a href="https://www.quantumsoftwarelab.com/news/qsl-welcomes-new-phd-students!">
+        <span class="papertitle">Joining the Quantum Software lab</span>
+      </a>
+      <br>
+      <em>bqb Quantum Youth</em>, 2022-Present
+      <p> I am joining the UK's Quantum Software lab as part of my PhD at the Uni of Edinburgh. The Quantum Software Lab is a research group that focuses on the development of quantum software and quantum algorithms. 
+        Very exciting!
+      </p>
+    </div>
+</div>
+
+    <div class="blogs-container">
+      <img src="images/classiq.png" class="blogs-image" alt="Blog Image">
+      <div class="blogs-text">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7239626251924090880/">
+          <span class="papertitle">Classiq ambassadorship</span>
+        </a>
+        <br>
+        <em>Classiq Technologies</em>, 2024-2028
+        <p> From September 24 I will be an ambassador for  Classiq Technologies, a quantum computing platform provider with an IDE, SDK, Compiler and OS for quantum computing. Every few weeks you’ll see me posting about their work and products! Hopefully together we will become more familiar with their incredible work and innovative products, which make them one of the leaders in the quantum computing space.
+        </p>
+      </div>
+  </div>
+
+    <div class="blogs-container">
+      <img src="images/nqcc24.jpg" class="blogs-image" alt="Blog Image">
+      <div class="blogs-text">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7223610317346406403/">
+          <span class="papertitle">NQCC Hack 24</span>
+        </a>
+        <br>
+        <em> National Quantum Computing Centre (NQCC)</em>, Uni. of Warwick, 2024
+        <p>It was a pleasure to mentor at the National Quantum Computing Centre (NQCC) 2024 Hackathon, as part of the IBM Quantum computing provider mentorship team. From Rolls-Royce to Cisco and Nomura our assigned teams presented incredible work and results leveraging the latest IBM software and devices. They tackled challenges such as:
+          Simulation of Quantum Hamiltonians with Interesting Properties, Network Flow Search Problem – Needle in a Haystack, and Quantum Machine Learning of time series data.
+        </p>
+      </div>
+  </div>
+
+  <div class="blogs-container">
+    <img src="images/grad.png" class="blogs-image" alt="Blog Image">
+    <div class="blogs-text">
+      <a href="https://www.linkedin.com/posts/maria-gragera-garces_earlier-this-week-i-graduated-from-the-university-activity-7220436463379779586-9V5e?utm_source=share&utm_medium=member_desktop&rcm=ACoAADI2Tm4Bc-hW5C5PAWXqDt4A4Y_5D-XkkRU">
+        <span class="papertitle">Graduation!</span>
+      </a>
+      <br>
+      <em> Uni. of Bath</em>, 2019-2024
+      <p>Got my degree in Physics from the University of Bath! It's been a long journey... Onto the PhD!
+      </p>
+    </div>
+</div>
+
+    <div class="blogs-container">
+      <img src="images/bphysoc.gif" class="blogs-image" alt="Blog Image">
+      <div class="blogs-text">
+        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7224443705737297922/">
+          <span class="papertitle">Chair of University of Bath Physoc</span>
+        </a>
+        <br>
+        <em> Uni. of Bath</em>, Physoc, 2019-2024
+        <p>It's my last day as Chair of University of Bath Physoc! A statement full of both joy and sadness. 
+        </p>
+      </div>
+  </div>
+
+    <div class="blogs-container">
+      <img src="images/oqs.jpg" class="blogs-image" alt="Blog Image">
+      <div class="blogs-text">
+        <a href="https://www.linkedin.com/posts/ingeniisolutions_on-this-weeks-ingenii-member-spotlight-activity-7096911162797129729-UVMt?utm_source=share&utm_medium=member_desktop&rcm=ACoAADI2Tm4Bc-hW5C5PAWXqDt4A4Y_5D-XkkRU">
+          <span class="papertitle">2024 Oxford Quantum Summit</span>
+        </a>
+        <br>
+        <em> Oxford University Physics Society</em>, 2024
+        <p>In my capacity as chair of the University of Bath Physoc, I had the opportunity to participate in the 2024 Oxford Quantum Summit. This event, orchestrated by the Oxford University Physics Society, provided a platform for interaction among young scientists from across the UK.
+        </p>
+      </div>
+  </div>
+
+  <div class="blogs-container">
+    <img src="images/loqcathon2.jpg" class="blogs-image" alt="Blog Image">
+    <div class="blogs-text">
+      <a href="https://www.linkedin.com/feed/update/urn:li:activity:7131985717991215104/">
+        <span class="papertitle">LOQCATHON.2</span>
+      </a>
+      <br>
+      <em> Quandela</em>, Sorbonned Uni., 2024
+      <p>Our team mentored by Benjamin Stott, implemented a Variational Quantum Eigensolver (VQE) to find the ground state of a given Hamiltonian utilising classical shadows on Quandela’s Perceval linear photonics software.
+        We were able to test implementation of Shadow VQE on Quandela’s cloud QPU as well as extend the implementation to larger qubit architectures and work on a theoretical cluster state based implementation.
+        And we ended in third place!
+      </p>
+    </div>
+</div>
+
+    <div class="blogs-container">
+      <img src="images/ingenii.jpg" class="blogs-image" alt="Blog Image">
+      <div class="blogs-text">
+        <a href="https://www.linkedin.com/posts/ingeniisolutions_on-this-weeks-ingenii-member-spotlight-activity-7096911162797129729-UVMt?utm_source=share&utm_medium=member_desktop&rcm=ACoAADI2Tm4Bc-hW5C5PAWXqDt4A4Y_5D-XkkRU">
+          <span class="papertitle">Quantum community Member spotlight</span>
+        </a>
+        <br>
+        <em>Ingenii</em>, 2024
+        <p>Ingenii featured my work in their Member Spotlight!</p>
+      </div>
+  </div>
+
+  <div class="blogs-container">
+    <img src="images/conf.jpg" class="blogs-image" alt="Blog Image">
+    <div class="blogs-text">
+      <a href="images/fentum.jpg">
+        <span class="papertitle">Coloquio Oportunidades de la Computación Cuántica</span>
+      </a>
+      <br>
+      <em>Benemérita Universidad Autónoma de Puebla</em>, 2023
+      <p>I was invited to give a talk in the 2024 Conference "Oportunidades de la Computación Cuántica" (spanish).</p>
+    </div>
+</div>
+
+  <div class="blogs-container">
+    <img src="images/fentum.jpg" class="blogs-image" alt="Blog Image">
+    <div class="blogs-text">
+      <a href="images/fentum.jpg">
+        <span class="papertitle">Finalist Femtum Leap Awards</span>
+      </a>
+      <br>
+      <em>Vernewell Group</em>, 2023
+      <p>I was nominated for the Rising Star award in the 2023 Femtum Leap Awards. These awards celebrate exceptional contributions to the field of quantum technology, recognising the innovative work and dedication of female professionals.</p>
+    </div>
+</div>
+          
+          </div>  
+
+            <script>
+              function showSection(sectionId) {
+                document.querySelectorAll('.content-section').forEach(section => {
+                  section.classList.remove('active');
+                });
+                document.querySelectorAll('.tab').forEach(tab => {
+                  tab.classList.remove('active');
+                });
+                document.getElementById(sectionId).classList.add('active');
+                event.target.classList.add('active');
+              }
+            </script>
+                                
+                    </tbody></table>
+                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+                      <tr>
+                        <td style="padding:0px">
+                          <br>
+                          <p style="text-align:right;font-size:small;">
+                            This website is based on <a href="https://jonbarron.info/"></a>Jon Barron's personal website</a> <a href="https://github.com/jonbarron/jonbarron_website">source code</a>.
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody></table>
                   </td>
                 </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </body>
-</html>
+              </table>
+            </body>
+          </html>
